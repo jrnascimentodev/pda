@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_consulta_preco">
+
+    <fragment
+        android:id="@+id/nav_consulta_preco"
+        android:name="pucminas.com.pda.ui.home.HomeFragment"
+        android:label="@string/menu_consulta_preco"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_gallery"
+            app:destination="@id/nav_inventario" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_inventario"
+        android:name="pucminas.com.pda.ui.gallery.GalleryFragment"
+        android:label="@string/menu_inventario"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_nav_gallery_to_nav_slideshow"
+            app:destination="@id/nav_logout" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="pucminas.com.pda.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_slideshow" />
+</navigation>

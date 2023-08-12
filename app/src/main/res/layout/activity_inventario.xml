@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Data"
+                style="@style/Pda.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:focusable="false"
+                android:hint="Data Base"
+                app:layout_constraintEnd_toStartOf="@+id/spnLocalEstoque"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tDataBase"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableEnd="@drawable/bt_calendario"
+                    android:focusable="false"
+                    android:textAlignment="center" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/spnLocalEstoque"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/spinner_background"
+                app:layout_constraintBottom_toTopOf="@+id/Produto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/Data"
+                app:layout_constraintTop_toTopOf="@+id/Data" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Produto"
+                style="@style/Pda.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:hint="Informe o Código/Barras do Produto"
+                app:layout_constraintEnd_toStartOf="@+id/bScanner"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Data">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tProduto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:inputType="phone"
+                    android:maxLength="18"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/bScanner"
+                android:layout_width="48dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/Produto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/Produto"
+                app:layout_constraintTop_toTopOf="@+id/Produto"
+                app:srcCompat="@drawable/ic_menu_camera" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/QuantidadeAtual"
+                style="@style/Pda.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:focusable="false"
+                android:hint="Quantidade Atual"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Descricao">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tQuantidadeAtual"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:text="0.000"
+                    android:textAlignment="center" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/QuantidadeApurada"
+                style="@style/Pda.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:focusable="false"
+                android:hint="Quantidade Apurada"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/NovaQuantidade">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tQuantidadeApurada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890."
+                    android:focusable="false"
+                    android:inputType="phone"
+                    android:text="0.000"
+                    android:textAlignment="center" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Descricao"
+                style="@style/Pda.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:layout_constraintBottom_toTopOf="@+id/QuantidadeAtual"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Produto"
+                tools:ignore="MissingConstraints">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tDescricao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textColorHint="#666666" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/NovaQuantidade"
+                style="@style/Pda.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:focusable="false"
+                android:hint="Nova Quantidade"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/QuantidadeAtual">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tNovaQuantidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:inputType="number"
+                    android:text="0.000"
+                    android:textAlignment="center" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Quantidade"
+                style="@style/Pda.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:hint="Quantidade"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/QuantidadeApurada">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tQuantidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="22"
+                    android:text="1"
+                    android:textAlignment="center" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/lLocalEstoque"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Local de Estoque"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/spnLocalEstoque"
+                app:layout_constraintEnd_toEndOf="@+id/spnLocalEstoque"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/spnLocalEstoque" />
+
+            <Button
+                android:id="@+id/bAdicionar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Salvar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Quantidade"
+                app:layout_constraintVertical_bias="0.0"
+                tools:layout_editor_absoluteX="80dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
